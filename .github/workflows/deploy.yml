@@ -66,5 +66,6 @@ jobs:
                   retries: 5
             EOF
             docker-compose down --remove-orphans
+            sudo fuser -k 8000/tcp || true
             docker-compose pull
             docker-compose up -d --force-recreate
